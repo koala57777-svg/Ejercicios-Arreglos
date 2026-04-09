@@ -1,5 +1,4 @@
 ﻿int TArreglo;
-int ContadorImpares = 0;
 
 do
 {
