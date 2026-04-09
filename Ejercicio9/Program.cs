@@ -51,7 +51,7 @@ do
     if (!double.TryParse(Console.ReadLine(), out NumeroBuscar))
     {
         Console.WriteLine();
-        Console.WriteLine("Tamaño inválido");
+        Console.WriteLine("Número inválido");
         Console.WriteLine();
     }
     else
