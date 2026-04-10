@@ -39,6 +39,16 @@ Console.WriteLine("Presione cualquier tecla para mostrar el resultado...");
 Console.ReadKey();
 Console.Clear();
 
+for (int j = 0; j < numeros.Length; j++)
+{
+    Console.WriteLine($"Número {j + 1}: {numeros[j]}");
+    Console.WriteLine();
+}
+
+Console.WriteLine("Presione cualquier tecla para mostrar el resultado...");
+Console.ReadKey();
+Console.Clear();
+
 int Posicion;
 bool Validar = false;
 
@@ -46,12 +56,12 @@ do
 {
     Validar = false;
 
-    Console.Write("Ingrese una posición: ");
+    Console.Write("Ingrese una posición de la lista: ");
 
-    if (!int.TryParse(Console.ReadLine(), out Posicion))
+    if (!int.TryParse(Console.ReadLine(), out Posicion) || Posicion<=0 || Posicion>(numeros.Length))
     {
         Console.WriteLine();
-        Console.WriteLine("Tamaño inválido");
+        Console.WriteLine("Posición de lista inválida");
         Console.WriteLine();
     }
     else
@@ -61,3 +71,34 @@ do
 } while (!Validar);
 Console.WriteLine();
 
+double NumeroReemplazar;
+
+do
+{
+    Validar = false;
+
+    Console.Write("Ingrese el número para reemplazar: ");
+
+    if (!double.TryParse(Console.ReadLine(), out NumeroReemplazar))
+    {
+        Console.WriteLine();
+        Console.WriteLine("Número inválido");
+        Console.WriteLine();
+    }
+    else
+    {
+        Validar = true;
+    }
+} while (!Validar);
+
+numeros[Posicion-1] = NumeroReemplazar;
+
+Console.WriteLine();
+Console.WriteLine("Número reemplazado correctamente.");
+Console.WriteLine();
+
+for (int k = 0; k < numeros.Length; k++)
+{
+    Console.WriteLine($"Número {k + 1}: {numeros[k]}");
+    Console.WriteLine();
+}
